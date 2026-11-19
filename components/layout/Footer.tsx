@@ -34,10 +34,11 @@ const software = [
 
 export default function Footer() {
   return (
-    <footer className="bg-brand-navy text-gray-300">
+    <footer className="bg-brand-navy text-gray-300 w-full">
       {/* Main Footer */}
-      <div className="section-container py-14">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <div className="section-container py-12 sm:py-14 px-4">
+        {/* 1 col on mobile, 2 on sm, 4 on lg */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10">
           {/* Col 1 — About */}
           <div>
             <Image
@@ -45,22 +46,22 @@ export default function Footer() {
               alt="Orvo Technologies"
               width={180}
               height={56}
-              className="h-14 w-auto object-contain mb-5"
+              className="h-12 sm:h-14 w-auto object-contain mb-4 sm:mb-5"
             />
-            <p className="text-gray-400 text-sm leading-relaxed mb-4">
+            <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-4">
               Africa&apos;s emerging technology partner — combining AI
               automations, enterprise software, cloud hosting, and corporate
               branding under one roof.
             </p>
-            <p className="text-sm font-semibold text-brand-cyan italic">
+            <p className="text-xs sm:text-sm font-semibold text-brand-cyan italic">
               &quot;Powering Business Systems.&quot;
             </p>
 
-            <div className="mt-6 p-4 bg-white/5 rounded-xl border border-white/10">
-              <p className="text-xs font-bold uppercase tracking-widest text-gray-400 mb-2">
+            <div className="mt-5 sm:mt-6 p-4 bg-white/5 rounded-xl border border-white/10">
+              <p className="text-[11px] sm:text-xs font-bold uppercase tracking-widest text-gray-400 mb-1.5 sm:mb-2">
                 Vision
               </p>
-              <p className="text-xs text-gray-400 leading-relaxed">
+              <p className="text-[11px] sm:text-xs text-gray-400 leading-relaxed">
                 To be Africa&apos;s most trusted technology partner — where
                 every business runs faster, sells more, and looks professional.
               </p>
@@ -69,7 +70,7 @@ export default function Footer() {
 
           {/* Col 2 — Services */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-4">
+            <h4 className="text-white font-bold text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">
               Our Services
             </h4>
             <ul className="space-y-2">
@@ -77,10 +78,10 @@ export default function Footer() {
                 <li key={s}>
                   <a
                     href="#services"
-                    className="text-sm text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-1.5 group"
+                    className="text-xs sm:text-sm text-gray-400 hover:text-brand-cyan transition-colors flex items-center gap-1.5 group"
                   >
-                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    {s}
+                    <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
+                    <span>{s}</span>
                   </a>
                 </li>
               ))}
@@ -89,22 +90,22 @@ export default function Footer() {
 
           {/* Col 3 — Software */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-4">
+            <h4 className="text-white font-bold text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">
               Our Software
             </h4>
-            <ul className="space-y-3">
+            <ul className="space-y-2.5 sm:space-y-3">
               {software.map((sw) => (
                 <li key={sw.name}>
                   <a
                     href="#software"
                     className="group flex items-start gap-2 hover:text-brand-cyan transition-colors"
                   >
-                    <span className="mt-0.5 w-1.5 h-1.5 rounded-full bg-brand-cyan flex-shrink-0 mt-1.5" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-brand-cyan flex-shrink-0 mt-1.5" />
                     <div>
-                      <p className="text-sm font-medium text-gray-300 group-hover:text-brand-cyan">
+                      <p className="text-xs sm:text-sm font-medium text-gray-300 group-hover:text-brand-cyan">
                         {sw.name}
                       </p>
-                      <p className="text-xs text-gray-500">{sw.desc}</p>
+                      <p className="text-[11px] sm:text-xs text-gray-500">{sw.desc}</p>
                     </div>
                   </a>
                 </li>
@@ -114,20 +115,20 @@ export default function Footer() {
 
           {/* Col 4 — Get in Touch */}
           <div>
-            <h4 className="text-white font-bold text-sm uppercase tracking-widest mb-4">
+            <h4 className="text-white font-bold text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">
               Get in Touch
             </h4>
             <ul className="space-y-3 mb-6">
               <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-gray-400">
+                <span className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                   Delta Corner Annex, Ring Road Westlands,<br />
                   P.O. Box 51631-00100 GPO, Nairobi, Kenya
                 </span>
               </li>
               <li className="flex items-start gap-2.5">
                 <Clock className="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-gray-400">
+                <span className="text-xs sm:text-sm text-gray-400">
                   Mon – Sat, 08:00 – 17:30
                 </span>
               </li>
@@ -135,7 +136,7 @@ export default function Footer() {
                 <Phone className="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" />
                 <a
                   href="tel:+254183738044"
-                  className="text-sm text-gray-400 hover:text-brand-cyan transition-colors"
+                  className="text-xs sm:text-sm text-gray-400 hover:text-brand-cyan transition-colors"
                 >
                   0183 738 044 (+254 183 738 044)
                 </a>
@@ -144,7 +145,7 @@ export default function Footer() {
                 <Mail className="w-4 h-4 text-brand-cyan flex-shrink-0 mt-0.5" />
                 <a
                   href="mailto:hello.orvo@gmail.com"
-                  className="text-sm text-gray-400 hover:text-brand-cyan transition-colors"
+                  className="text-xs sm:text-sm text-gray-400 hover:text-brand-cyan transition-colors break-all"
                 >
                   hello.orvo@gmail.com
                 </a>
@@ -154,14 +155,14 @@ export default function Footer() {
             <div className="space-y-2">
               <a
                 href="#"
-                className="flex items-center gap-2 text-sm text-brand-cyan hover:text-white font-medium transition-colors"
+                className="flex items-center gap-2 text-xs sm:text-sm text-brand-cyan hover:text-white font-medium transition-colors"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
                 Client Portal Login
               </a>
               <a
                 href="#"
-                className="flex items-center gap-2 text-sm text-gray-400 hover:text-brand-cyan transition-colors"
+                className="flex items-center gap-2 text-xs sm:text-sm text-gray-400 hover:text-brand-cyan transition-colors"
               >
                 <ExternalLink className="w-3.5 h-3.5" />
                 Staff Sign In
@@ -173,12 +174,12 @@ export default function Footer() {
 
       {/* Bottom Bar */}
       <div className="border-t border-white/10">
-        <div className="section-container py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-sm text-gray-500 text-center sm:text-left">
+        <div className="section-container py-5 px-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left">
+          <p className="text-xs sm:text-sm text-gray-500">
             © 2026 Orvo Technologies. All rights reserved.{" "}
-            <span className="text-brand-cyan">Powering Business Systems.</span>
+            <span className="text-brand-cyan font-medium block sm:inline">Powering Business Systems.</span>
           </p>
-          <div className="flex gap-4 text-sm text-gray-500">
+          <div className="flex gap-4 text-xs sm:text-sm text-gray-500">
             <Link href="#" className="hover:text-brand-cyan transition-colors">
               Privacy Policy
             </Link>

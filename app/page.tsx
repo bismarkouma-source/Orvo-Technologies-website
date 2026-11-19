@@ -13,14 +13,14 @@ import QuoteSection from "@/components/sections/QuoteSection";
 
 export default function HomePage() {
   return (
-    <>
+    <div className="overflow-x-hidden w-full max-w-full min-h-screen flex flex-col">
       {/* Fixed top bar with contact info and portal links */}
       <UtilityBar />
 
       {/* Sticky navigation with logo and mega-menu */}
       <Navbar />
 
-      <main>
+      <main className="w-full flex-1 overflow-x-hidden">
         {/* 1. Hero — headline, CTA, trust badges */}
         <Hero />
 
@@ -48,6 +48,6 @@ export default function HomePage() {
 
       {/* Floating WhatsApp chat button */}
       <FloatingChat />
-    </>
+    </div>
   );
 }

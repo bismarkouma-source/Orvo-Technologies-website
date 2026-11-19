@@ -62,54 +62,61 @@ export default function FeaturedPillars() {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-20 bg-white">
-      <div className="section-container">
-        <div className="text-center mb-12 animate-on-scroll">
-          <span className="inline-block px-4 py-1.5 bg-brand-cyan/10 text-brand-cyan text-sm font-semibold rounded-full mb-3">
+    <section ref={sectionRef} className="py-16 sm:py-20 bg-white w-full">
+      <div className="section-container px-4">
+        <div className="text-center mb-10 sm:mb-12 animate-on-scroll">
+          <span className="inline-block px-3.5 py-1 bg-brand-cyan/10 text-brand-cyan text-xs sm:text-sm font-semibold rounded-full mb-3">
             What We Do Best
           </span>
-          <h2 className="section-title">Three Pillars of Orvo Technologies</h2>
-          <p className="section-subtitle mx-auto">
+          <h2 className="section-title text-2xl sm:text-4xl">Three Pillars of Orvo Technologies</h2>
+          <p className="section-subtitle mx-auto text-sm sm:text-base">
             Tech + branding expertise under one roof, tailored for Kenyan businesses.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {/* 1 column on mobile, 3 columns on desktop */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {pillars.map((pillar, i) => (
             <div
               key={pillar.title}
-              className="animate-on-scroll group relative bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border border-gray-100"
+              className="animate-on-scroll group relative bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-300 hover:-translate-y-2 border border-gray-100 flex flex-col"
               style={{ transitionDelay: `${i * 100}ms` }}
             >
               {/* Top gradient bar */}
               <div className={`h-1.5 w-full bg-gradient-to-r ${pillar.color}`} />
 
-              <div className="p-7">
-                {/* Icon + Badge */}
-                <div className="flex items-start justify-between mb-5">
-                  <div className={`w-14 h-14 rounded-2xl ${pillar.bgLight} flex items-center justify-center`}>
-                    <pillar.icon className={`w-7 h-7 ${pillar.iconColor}`} />
-                  </div>
-                  <span className={`text-xs font-bold px-3 py-1 rounded-full ${pillar.badgeColor}`}>
-                    {pillar.badge}
-                  </span>
-                </div>
-
-                <h3 className="text-xl font-heading font-bold text-brand-navy mb-3">{pillar.title}</h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-5">{pillar.description}</p>
-
-                {/* Feature pills */}
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {pillar.features.map((f) => (
-                    <span key={f} className="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">
-                      {f}
+              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+                <div>
+                  {/* Icon + Badge */}
+                  <div className="flex items-start justify-between mb-5">
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 rounded-2xl ${pillar.bgLight} flex items-center justify-center flex-shrink-0`}>
+                      <pillar.icon className={`w-6 h-6 sm:w-7 sm:h-7 ${pillar.iconColor}`} />
+                    </div>
+                    <span className={`text-[11px] sm:text-xs font-bold px-3 py-1 rounded-full ${pillar.badgeColor}`}>
+                      {pillar.badge}
                     </span>
-                  ))}
+                  </div>
+
+                  <h3 className="text-lg sm:text-xl font-heading font-bold text-brand-navy mb-2 sm:mb-3">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-gray-500 text-xs sm:text-sm leading-relaxed mb-5">
+                    {pillar.description}
+                  </p>
+
+                  {/* Feature pills */}
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6">
+                    {pillar.features.map((f) => (
+                      <span key={f} className="text-[11px] sm:text-xs bg-gray-100 text-gray-600 px-2.5 py-1 rounded-full">
+                        {f}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 <a
                   href={pillar.link}
-                  className="flex items-center gap-2 text-sm font-semibold text-brand-cyan hover:text-brand-navy transition-colors group"
+                  className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-brand-cyan hover:text-brand-navy transition-colors group mt-auto pt-2"
                 >
                   Learn more
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
